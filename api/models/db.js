@@ -14,4 +14,7 @@ mongoose.connection.on("error", error => {
 mongoose.connection.on("disconnected", () => {
   console.log("Disconnected from", URI);
 });
+// require each mongoose schema here so we can have a single instance (singleton)
+// of all schemas throughout the application
 
+require('./Principal');
