@@ -9,7 +9,7 @@ const bodyParser = require('body-parser');
 //we will require the connection script to mongodb
 require('./api/models/db');
 
-const index = require('./routes/index');
+
 const apiRoutes = require('./api/routes/index');
 
 
@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
+
 app.use('/api', apiRoutes);
 
 
